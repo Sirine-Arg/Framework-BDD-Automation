@@ -21,7 +21,6 @@ public class Setup {
 	public static void setup() {
 		driverManager = DriverManagerFactory.getManager(DriverType.CHROME);
 		driver = driverManager.getDriver();
-
 	}
 
 	@After
@@ -29,14 +28,14 @@ public class Setup {
 	 * Embed a screenshot in test report if test is marked as failed
 	 */
 	public void embedScreenshot(Scenario scenario) {
-		if (scenario.isFailed())
-			;
-		try {
-			scenario.write("Current page url is " + driver.getCurrentUrl());
-			byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-			scenario.embed(screenshot, "image/png");
-		} catch (WebDriverException someplateformeDontSupportScreenchots) {
-			System.err.println(someplateformeDontSupportScreenchots.getMessage());
+		if (scenario.isFailed()) {
+			try {
+				scenario.write("Current page url is " + driver.getCurrentUrl());
+				byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+				scenario.embed(screenshot, "image/png");
+			} catch (WebDriverException someplateformeDontSupportScreenchots) {
+				System.err.println(someplateformeDontSupportScreenchots.getMessage());
+			}
 		}
 		driver.quit();
 	}

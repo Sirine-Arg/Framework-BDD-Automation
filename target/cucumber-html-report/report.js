@@ -13,7 +13,7 @@ formatter.feature({
   ]
 });
 formatter.before({
-  "duration": 3292879000,
+  "duration": 3125105900,
   "status": "passed"
 });
 formatter.scenario({
@@ -37,12 +37,12 @@ formatter.step({
 });
 formatter.step({
   "line": 8,
-  "name": "Je saisie le username",
+  "name": "Je saisie le username \"Admin\"",
   "keyword": "When "
 });
 formatter.step({
   "line": 9,
-  "name": "Je saisie le mot de passe",
+  "name": "Je saisie le mot de passe \"admin123\"",
   "keyword": "And "
 });
 formatter.step({
@@ -52,33 +52,64 @@ formatter.step({
 });
 formatter.step({
   "line": 11,
-  "name": "Redirection vers la page home OrangeHRM",
+  "name": "Redirection vers la page home OrangeHRM \"Welcome Paul\"",
   "keyword": "Then "
 });
-formatter.match({});
-formatter.result({
-  "status": "undefined"
+formatter.match({
+  "location": "AuthentificationStepDefinition.jOuvreLApplicationOrangeHRM()"
 });
-formatter.match({});
 formatter.result({
-  "status": "undefined"
+  "duration": 7945221000,
+  "status": "passed"
 });
-formatter.match({});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Admin",
+      "offset": 23
+    }
+  ],
+  "location": "AuthentificationStepDefinition.jeSaisieLeUsername(String)"
+});
 formatter.result({
-  "status": "undefined"
+  "duration": 107423300,
+  "status": "passed"
 });
-formatter.match({});
+formatter.match({
+  "arguments": [
+    {
+      "val": "admin123",
+      "offset": 27
+    }
+  ],
+  "location": "AuthentificationStepDefinition.jeSaisieLeMotDePasse(String)"
+});
 formatter.result({
-  "status": "undefined"
+  "duration": 84227300,
+  "status": "passed"
 });
-formatter.match({});
+formatter.match({
+  "location": "AuthentificationStepDefinition.jeCliqueSurLeBouttonLogin()"
+});
 formatter.result({
-  "status": "undefined"
+  "duration": 4475472400,
+  "status": "passed"
 });
-formatter.write("Current page url is data:,");
-formatter.embedding("image/png", "embedded0.png");
+formatter.match({
+  "arguments": [
+    {
+      "val": "Welcome Paul",
+      "offset": 41
+    }
+  ],
+  "location": "AuthentificationStepDefinition.redirectionVersLaPageHomeOrangeHRM(String)"
+});
+formatter.result({
+  "duration": 77228600,
+  "status": "passed"
+});
 formatter.after({
-  "duration": 1974947300,
+  "duration": 1648219200,
   "status": "passed"
 });
 });
