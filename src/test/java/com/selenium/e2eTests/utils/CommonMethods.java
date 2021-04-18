@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class CommonMethods {
 	
@@ -13,6 +15,8 @@ public class CommonMethods {
 	public CommonMethods() {
 		driver = Setup.driver;
 	}
+	
+	protected static final Logger logger = LoggerFactory.getLogger(AbstractPage.class);
 	
 	public void openApplication() throws IOException {
 		prop = new Properties();
